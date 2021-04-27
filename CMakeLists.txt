@@ -8,7 +8,9 @@ find_package(GDAL REQUIRED)
 include_directories(${GDAL_INCLUDE_DIR})
 
 # Add compiler options.
+if (NOT WIN32)
 add_definitions(-Wall -Wextra)
+endif()
 
 # Add source directory
 aux_source_directory("./src" SRC_LIST)
@@ -17,3 +19,5 @@ aux_source_directory("./src" SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 	
 target_link_libraries(${PROJECT_NAME} ${GDAL_LIBRARY})
+
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
