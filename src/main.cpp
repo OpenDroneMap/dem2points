@@ -200,7 +200,7 @@ int main(int argc, char **argv) {
         logWriter("Sampling and writing to file...");
 
         // Starting writing ply file
-        std::ofstream f (OutputFile.value);
+        std::ofstream f (OutputFile.value, std::ios::binary);
         f << "ply" << std::endl;
 
         if (IS_BIG_ENDIAN){
