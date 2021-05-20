@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
     if (!SkirtHeightCap.set) SkirtHeightCap.value = 100.0f;
 
     logWriter.verbose = Verbose.set;
-    logWriter.outputFile = "dem2points_log.txt";
+    logWriter.outputFile = NULL;
     logArgs(params, logWriter);
 
     GDALDataset  *dataset;
